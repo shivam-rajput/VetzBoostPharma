@@ -29,7 +29,7 @@
   }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1360px) {
   .nav-main {
     position: fixed;
     top: var(--header-height);
@@ -63,7 +63,9 @@
   .nav-cta .btn-primary {
     display: none;
   }
+}
 
+@media (max-width: 960px) {
   .topbar .container {
     justify-content: center;
     flex-wrap: wrap;

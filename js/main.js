@@ -1,8 +1,43 @@
 /* ==========================================================================
    Vetz Boost Pharma — Site JavaScript (vanilla, no dependencies)
    ========================================================================== */
-(function () {
+(async function () {
   "use strict";
+
+  async function loadSharedComponent(selector, path) {
+    var placeholder = document.querySelector(selector);
+    if (!placeholder) {
+      throw new Error("Missing shared component placeholder: " + selector);
+    }
+
+    var response = await fetch(path);
+    if (!response.ok) {
+      throw new Error("Failed to load " + path + ": " + response.status);
+    }
+
+    placeholder.outerHTML = await response.text();
+  }
+
+  async function loadSharedHead() {
+    var placeholder = document.querySelector('meta[name="shared-head"]');
+    if (!placeholder) {
+      throw new Error("Missing shared head placeholder.");
+    }
+
+    var response = await fetch("head.html");
+    if (!response.ok) {
+      throw new Error("Failed to load head.html: " + response.status);
+    }
+
+    placeholder.insertAdjacentHTML("beforebegin", await response.text());
+    placeholder.remove();
+  }
+
+  await Promise.all([
+    loadSharedHead(),
+    loadSharedComponent("#shared-header", "header.html"),
+    loadSharedComponent("#shared-footer", "footer.html")
+  ]);
 
   /* ---------- Mobile nav toggle ---------- */
   var navToggle = document.querySelector(".nav-toggle");
@@ -100,4 +135,6 @@
       link.classList.add("active");
     }
   });
-})();
+})().catch(function (error) {
+  console.error("Unable to initialize the shared page components.", error);
+});
