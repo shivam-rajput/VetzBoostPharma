@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Vetz Boost Pharma — Design Tokens
+   ========================================================================== */
+:root {
+  /* Brand greens */
+  --color-green-900: #0b2f18;
+  --color-green-800: #0d3b1e;
+  --color-green-700: #123a20;
+  --color-green-600: #1a4d2b;
+  --color-green-500: #1f5c33;
+  --color-green-100: #e7f3ea;
+  --color-green-50: #f1f8f2;
+
+  /* Gold / mustard accent */
+  --color-gold: #e3ad57;
+  --color-gold-dark: #c9953a;
+  --color-gold-light: #f2cd8a;
+
+  /* Neutrals */
+  --color-cream: #f7f6ef;
+  --color-cream-dark: #efede1;
+  --color-white: #ffffff;
+  --color-text: #1c2b20;
+  --color-text-light: #5c6b62;
+  --color-text-muted: #8b968f;
+  --color-border: #e6e4d8;
+  --color-black: #0a0a0a;
+
+  /* Typography */
+  --font-heading: "Poppins", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+
+  /* Radii / shadows */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 2px 8px rgba(13, 59, 30, 0.06);
+  --shadow-md: 0 8px 24px rgba(13, 59, 30, 0.10);
+  --shadow-lg: 0 16px 40px rgba(13, 59, 30, 0.16);
+
+  /* Layout */
+  --container-width: 1200px;
+  --header-height: 88px;
+  --transition: 0.25s ease;
+}
